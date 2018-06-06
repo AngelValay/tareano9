@@ -1,0 +1,183 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="css/bootstrap_4.0.0_css_bootstrap.min.css">
+	<title>Pedidos</title>
+
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">Control de pedidos</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="anadircliente.html">Clientes</a>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link" href="anadirproducto.html">Productos</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="anadirpedido.html">Pedidos</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<main>
+		<div class="container">
+			<br>
+			<div class="mx-auto">
+				<div class="card">
+					<h3 class="card-header">Pedidos</h3>
+					<div class="card-body">
+						<nav>
+							<div class="nav nav-tabs" id="nav-tab" role="tablist">
+								<a class="nav-item nav-link active" id="nav-registro-tab" data-toggle="tab" href="#nav-registro" role="tab" aria-controls="nav-registro" aria-selected="true">Registrar pedido</a>
+								<a class="nav-item nav-link" id="nav-mostrar-tab" data-toggle="tab" href="#nav-mostrar" role="tab" aria-controls="nav-mostrar" aria-selected="false">Mostrar pedidos</a>
+							</div>
+						</nav>
+						<br>
+						<div class="tab-content" id="nav-tabContent">
+							<div class="tab-pane fade show active" id="nav-registro" role="tabpanel" aria-labelledby="nav-registro-tab">
+								<h4>Datos del pedido</h4>
+								<!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+								<form name="registro" action="" onsubmit="registrarPedido();" method="get">
+									<div class="form-group row">
+										<label for="staticEmail" class="col-sm-3 col-form-label">Fecha de registro:</label>
+										<div class="col-sm-9">
+											<input type="text" readonly class="form-control-plaintext" id="staticEmail" value="31/05/2018 ">
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="staticCliente" class="col-sm-3 col-form-label">Cliente:</label>
+										<div class="col-sm-9">
+											<select class="form-control">
+												<option>Cliente no seleccionado</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="staticProducto" class="col-sm-3 col-form-label">Productos:</label>
+										<div class="col-sm-9">
+											<select class="form-control">
+												<option>Producto no seleccionado</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="formGroupCantidad" class="col-sm-3 col-form-label">Cantidad:</label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ingresa la cantidad">
+										</div>
+
+									</div>
+									<button type="submit" class="btn btn-primary">Generar pedido</button>
+								</form>
+							</div>
+							
+							<div class="tab-pane fade" id="nav-mostrar" role="tabpanel" aria-labelledby="nav-mostrar-tab">
+								<h4>Pedidos almacenados</h4>
+								<br>
+								<form class="form-inline">
+									<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+									<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+								</form>
+								<br>
+								<table class="table table-hover table-bordered tabla-sm">
+									<thead class="thead-light">
+										<tr>
+											<th scope="col">#</th>
+											<th scope="col">Cliente</th>
+											<th scope="col">Producto</th>
+											<th scope="col">Cantidad</th>
+											<th scope="col">Fecha del pedido</th>
+											<th scope="col">Opciones</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th scope="row">1</th>
+											<td>Otto</td>
+											<td>@mdo</td>
+											<td>16</td>
+											<td>09/09/17</td>
+											<td>
+												<button type="button" class="btn btn-outline-secondary btn-sm">Actualizar</button>
+												<button type="button" class="btn btn-outline-danger btn-sm">Eliminar</button>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">2</th>
+											<td>Thornton</td>
+											<td>@fat</td>
+											<td>46</td>
+											<td>18/01/17</td>
+											<td>
+												<button type="button" class="btn btn-outline-secondary btn-sm">Actualizar</button>
+												<button type="button" class="btn btn-outline-danger btn-sm">Eliminar</button>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">3</th>
+											<td>Bird</td>
+											<td>@twitter</td>
+											<td>34</td>
+											<td>05/03/18</td>
+											<td>
+												<button type="button" class="btn btn-outline-secondary btn-sm">Actualizar</button>
+												<button type="button" class="btn btn-outline-danger btn-sm">Eliminar</button>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</main>
+	<div class="modal" tabindex="-1" role="dialog" id="myModal" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Pedido registrado</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p>Ver los pedidos</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+					<button type="button" class="btn btn-primary">Mostrar pedidos</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="js/jquery/jquery-3.2.1.slim.min.js"></script>
+	<script src="js/jquery/popper.min.js"></script>
+	<script src="js/jquery/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		function registrarPedido() {
+			// body...
+			$('#myModal').modal('toggle');
+			$('#myModal').modal('show');
+		}
+	</script>
+</body>
+</html>
