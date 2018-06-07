@@ -10,114 +10,7 @@
 	<link rel="stylesheet" href="css/bootstrap_4.0.0_css_bootstrap.min.css">
 	<title>Inicio</title>
 	
-	<!--- CanvasJs-->
-	<link href="https://canvasjs.com/assets/css/jquery-ui.1.11.2.min.css" rel="stylesheet" />
-	<script>
-		window.onload = function () {
-
-	// Construct options first and then pass it as a parameter
-	var options1 = {
-		animationEnabled: true,
-		title: {
-			text: "Productos en stock"
-		},
-		data: [{
-			type: "column", //change it to line, area, bar, pie, etc
-			//legendText: "Try Resizing with the handle to the bottom right",
-			//showInLegend: true,
-			dataPoints: [
-			{ label: "Producto 1", y: 10 },
-			{ label: "Producto 2", y: 6 },
-			{ label: "Producto 3", y: 14 },
-			{ label: "Producto 4", y: 12 },
-			{ label: "Producto 5", y: 19 },
-			{ label: "Producto 6", y: 14 },
-			{ label: "Producto 7", y: 26 },
-			{ label: "Producto 8", y: 10 },
-			{ label: "Producto 9", y: 22 }
-			]
-		}]
-	};
-
-	$("#resizable").resizable({
-		create: function (event, ui) {
-			//Create chart.
-			$("#chartContainer1").CanvasJSChart(options1);
-		},
-		resize: function (event, ui) {
-			//Update chart size according to its container size.
-			$("#chartContainer1").CanvasJSChart().render();
-		}
-	});
-	var chart = new CanvasJS.Chart("chartContainer", {
-		animationEnabled: true,
-		title:{
-			text: "Productos pedidos vs Productos en stock"
-		},	
-		axisY: {
-			title: "Productos pedidos",
-			titleFontColor: "#4F81BC",
-			lineColor: "#4F81BC",
-			labelFontColor: "#4F81BC",
-			tickColor: "#4F81BC"
-		},
-		axisY2: {
-			title: "Productos en stock",
-			titleFontColor: "#C0504E",
-			lineColor: "#C0504E",
-			labelFontColor: "#C0504E",
-			tickColor: "#C0504E"
-		},	
-		toolTip: {
-			shared: true
-		},
-		legend: {
-			cursor:"pointer",
-			itemclick: toggleDataSeries
-		},
-		data: [{
-			type: "column",
-			name: "En stock",
-			legendText: "En stock",
-			showInLegend: true, 
-			dataPoints:[
-			{ label: "Producto 1", y: 20 },
-			{ label: "Producto 2", y: 30 },
-			{ label: "Producto 3", y: 15 },
-			{ label: "Producto 4", y: 14 },
-			{ label: "Producto 5", y: 10 },
-			{ label: "Producto 6", y: 9 }
-			]
-		},
-		{
-			type: "column",	
-			name: "Pedidos",
-			legendText: "Pedidos",
-			axisYType: "secondary",
-			showInLegend: true,
-			dataPoints:[
-			{ label: "Producto 1", y: 10 },
-			{ label: "Producto 2", y: 2 },
-			{ label: "Producto 3", y: 3 },
-			{ label: "Producto 4", y: 4 },
-			{ label: "Producto 5", y: 2 },
-			{ label: "Producto 6", y: 1 }
-			]
-		}]
-	});
-	chart.render();
-
-	function toggleDataSeries(e) {
-		if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-			e.dataSeries.visible = false;
-		}
-		else {
-			e.dataSeries.visible = true;
-		}
-		chart.render();
-	}
-}
-</script>
+	
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -146,11 +39,7 @@
 		<div class="container">
 			<br><br>
 			<section>
-				<div id="resizable" style="height: 370px;border:1px solid gray;">
-					<div id="chartContainer1" style="height: 100%; width: 100%;"></div>
-				</div>
-				<br>
-				<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+				<p>Inicio</p>
 			</section>
 			
 		</div>
@@ -160,9 +49,5 @@
 	<script src="js/jquery/jquery-3.2.1.slim.min.js"></script>
 	<script src="js/jquery/popper.min.js"></script>
 	<script src="js/jquery/bootstrap.min.js"></script>
-	<!-- CanvasJs -->
-	<script src="js/jquery/jquery-1.11.1.min.js"></script>
-	<script src="js/jquery/jquery-ui.1.11.2.min.js"></script>
-	<script src="js/jquery/jquery.canvasjs.min.js"></script>
 </body>
 </html>
