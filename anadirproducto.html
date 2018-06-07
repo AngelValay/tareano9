@@ -66,7 +66,7 @@
 										<input type="text" class="form-control" id="inputDescripcion" placeholder="Descripcion">
 									</div>
 
-									<button type="submit" class="btn btn-primary">Añadir producto</button>
+									<button type="button" class="btn btn-primary" onclick="registrarProducto();">Añadir producto</button>
 								</form>
 
 							</div>
@@ -97,8 +97,8 @@
 											<td>Otto</td>
 											<td>@mdo</td>
 											<td>
-												<button type="button" class="btn btn-outline-secondary btn-sm">Actualizar</button>
-												<button type="button" class="btn btn-outline-danger btn-sm">Eliminar</button>
+												<button type="button" class="btn btn-outline-secondary btn-sm" onclick="actualizarProducto();">Actualizar</button>
+												<button type="button" class="btn btn-outline-danger btn-sm" onclick="eliminarProducto();">Eliminar</button>
 											</td>
 										</tr>
 										<tr>
@@ -107,8 +107,8 @@
 											<td>Thornton</td>
 											<td>@fat</td>
 											<td>
-												<button type="button" class="btn btn-outline-secondary btn-sm">Actualizar</button>
-												<button type="button" class="btn btn-outline-danger btn-sm">Eliminar</button>
+												<button type="button" class="btn btn-outline-secondary btn-sm" onclick="actualizarProducto();">Actualizar</button>
+												<button type="button" class="btn btn-outline-danger btn-sm" onclick="eliminarProducto();">Eliminar</button>
 											</td>
 										</tr>
 										<tr>
@@ -117,8 +117,8 @@
 											<td>the Bird</td>
 											<td>@twitter</td>
 											<td>
-												<button type="button" class="btn btn-outline-secondary btn-sm">Actualizar</button>
-												<button type="button" class="btn btn-outline-danger btn-sm">Eliminar</button>
+												<button type="button" class="btn btn-outline-secondary btn-sm" onclick="actualizarProducto();">Actualizar</button>
+												<button type="button" class="btn btn-outline-danger btn-sm" onclick="eliminarProducto();">Eliminar</button>
 											</td>
 										</tr>
 									</tbody>
@@ -132,10 +132,120 @@
 	</div>
 </div>	
 </main>
+<div class="modal fade" tabindex="-1" role="dialog" id="modalRegistro" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Producto registrado</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p>Ver los productos</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="modalEliminacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Eliminar pedido</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<blockquote class="blockquote">
+						<p class="mb-0">Se eliminara el siguiente producto registrado:</p>
+					</blockquote>
+					<dl class="row">
+						<dt class="col-sm-3">Nombre del producto:</dt>
+						<dd class="col-sm-9">Otto</dd>
+
+						<dt class="col-sm-3">Cantidad:</dt>
+						<dd class="col-sm-9">16</dd>
+						
+						<dt class="col-sm-3">Descripcion:</dt>
+						<dd class="col-sm-9">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. </p>
+						</dd>
+					</dl>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+					<button type="button" class="btn btn-danger">Eliminar producto</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="modalActualizacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Actualizar producto</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form name="registro" action="" onsubmit="actualizarDatos();" method="get">
+						<blockquote class="blockquote">
+						<p class="mb-0">Actualiza los datos del producto:</p>
+					</blockquote>
+									<div class="form-group">
+										<label for="inputNombreProducto">Nombre del producto</label>
+										<input type="text" class="form-control" id="inputNombreProducto" placeholder="Nombre del producto">
+									</div>
+									<div class="form-group">
+										<label for="inputPrecio">Precio</label>
+										<input type="text" class="form-control" id="inputPrecio" placeholder="Precio">
+									</div>
+									<div class="form-group">
+										<label for="inputDireccion">Descripcion</label>
+										<input type="text" class="form-control" id="inputDescripcion" placeholder="Descripcion">
+									</div>
+									
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+					<button type="button" class="btn btn-primary">Actualizar producto</button>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="js/jquery/jquery-3.2.1.slim.min.js"></script>
 <script src="js/jquery/popper.min.js"></script>
 <script src="js/jquery/bootstrap.min.js"></script>
+<script type="text/javascript">
+	function registrarProducto() {
+			// body...
+			$('#modalRegistro').modal('toggle');
+			$('#modalRegistro').modal('show');
+			
+		}
+		function eliminarProducto() {
+			// body...
+			$('#modalEliminacion').modal('toggle');
+			$('#modalEliminacion').modal('show');
+		}
+		function actualizarProducto() {
+			// body...
+			$('#modalActualizacion').modal('toggle');
+			$('#modalActualizacion').modal('show');
+		}
+</script>
 </body>
 </html>

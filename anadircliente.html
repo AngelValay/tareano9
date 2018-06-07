@@ -20,7 +20,7 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+					<a class="nav-link" href="index.html">Inicio<span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item active">
 					<a class="nav-link" href="anadircliente.html">Clientes</a>
@@ -44,12 +44,69 @@
 					<div class="card-body">
 						<nav>
 							<div class="nav nav-tabs" id="nav-tab" role="tablist">
-								<a class="nav-item nav-link active" id="nav-registro-tab" data-toggle="tab" href="#nav-registro" role="tab" aria-controls="nav-registro" aria-selected="true">Registrar cliente</a>
-								<a class="nav-item nav-link" id="nav-mostrar-tab" data-toggle="tab" href="#nav-mostrar" role="tab" aria-controls="nav-mostrar" aria-selected="false">Mostrar clientes</a>
+								<a class="nav-item nav-link active" id="nav-mostrar-tab" data-toggle="tab" href="#nav-mostrar" role="tab" aria-controls="nav-mostrar" aria-selected="true">Mostrar clientes</a>
+								<a class="nav-item nav-link " id="nav-registro-tab" data-toggle="tab" href="#nav-registro" role="tab" aria-controls="nav-registro" aria-selected="false">Registrar cliente</a>
 							</div>
 						</nav>
 						<div class="tab-content" id="nav-tabContent">
-							<div class="tab-pane fade show active" id="nav-registro" role="tabpanel" aria-labelledby="nav-registro-tab">
+							<div class="tab-pane fade show active" id="nav-mostrar" role="tabpanel" aria-labelledby="nav-mostrar-tab">
+								<br>
+								<h4>Clientes registrados</h4>
+								<br>
+								<form class="form-inline">
+									<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+									<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+								</form>
+								<br>
+								<table class="table table-hover table-bordered tabla-sm">
+									<thead class="thead-light">
+										<tr>
+											<th scope="col">#</th>
+											<th scope="col">Nombre</th>
+											<th scope="col">Direccion</th>
+											<th scope="col">Email</th>
+											<th scope="col">Telefono</th>
+											<th scope="col">Opciones</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th scope="row">1</th>
+											<td>Mark</td>
+											<td>Otto</td>
+											<td>@mdo</td>
+											<td>1699</td>
+											<td>
+												<button type="button" class="btn btn-outline-secondary btn-sm" onclick="actualizarCliente();">Actualizar</button>
+												<button type="button" class="btn btn-outline-danger btn-sm" onclick="eliminarCliente();">Eliminar</button>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">2</th>
+											<td>Jacob</td>
+											<td>Thornton</td>
+											<td>@fat</td>
+											<td>1839</td>
+											<td>
+												<button type="button" class="btn btn-outline-secondary btn-sm" onclick="actualizarCliente();">Actualizar</button>
+												<button type="button" class="btn btn-outline-danger btn-sm" onclick="eliminarCliente();">Eliminar</button>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">3</th>
+											<td>Larry</td>
+											<td>the Bird</td>
+											<td>@twitter</td>
+											<td>1648</td>
+											<td>
+												<button type="button" class="btn btn-outline-secondary btn-sm" onclick="actualizarCliente();">Actualizar</button>
+												<button type="button" class="btn btn-outline-danger btn-sm" onclick="eliminarCliente();">Eliminar</button>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="tab-pane fade" id="nav-registro" role="tabpanel" aria-labelledby="nav-registro-tab">
 								<br>
 								<h4 class="card-title">Datos del cliente</h4>
 								<!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
@@ -78,65 +135,8 @@
 											<input type="text" class="form-control" id="inputTelefono" placeholder="8347845614">
 										</div>
 									</div>
-									<button type="submit" class="btn btn-primary">Registrar cliente</button>
+									<button type="button" class="btn btn-primary" onclick="registrarCliente();">Registrar cliente</button>
 								</form>
-							</div>
-							<div class="tab-pane fade" id="nav-mostrar" role="tabpanel" aria-labelledby="nav-mostrar-tab">
-								<br>
-								<h4>Clientes registrados</h4>
-								<br>
-								<form class="form-inline">
-									<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-									<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-								</form>
-								<br>
-								<table class="table table-hover table-bordered tabla-sm">
-									<thead class="thead-light">
-										<tr>
-											<th scope="col">#</th>
-											<th scope="col">Nombre</th>
-											<th scope="col">Direccion</th>
-											<th scope="col">Email</th>
-											<th scope="col">Telefono</th>
-											<th scope="col">Opciones</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<th scope="row">1</th>
-											<td>Mark</td>
-											<td>Otto</td>
-											<td>@mdo</td>
-											<td>1699</td>
-											<td>
-												<button type="button" class="btn btn-outline-secondary btn-sm">Actualizar</button>
-												<button type="button" class="btn btn-outline-danger btn-sm">Eliminar</button>
-											</td>
-										</tr>
-										<tr>
-											<th scope="row">2</th>
-											<td>Jacob</td>
-											<td>Thornton</td>
-											<td>@fat</td>
-											<td>1839</td>
-											<td>
-												<button type="button" class="btn btn-outline-secondary btn-sm">Actualizar</button>
-												<button type="button" class="btn btn-outline-danger btn-sm">Eliminar</button>
-											</td>
-										</tr>
-										<tr>
-											<th scope="row">3</th>
-											<td>Larry</td>
-											<td>the Bird</td>
-											<td>@twitter</td>
-											<td>1648</td>
-											<td>
-												<button type="button" class="btn btn-outline-secondary btn-sm">Actualizar</button>
-												<button type="button" class="btn btn-outline-danger btn-sm">Eliminar</button>
-											</td>
-										</tr>
-									</tbody>
-								</table>
 							</div>
 						</div>
 					</div>
@@ -144,10 +144,132 @@
 			</div>
 		</div>	
 	</main>
+		<div class="modal fade" tabindex="-1" role="dialog" id="modalRegistro" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Cliente registrado</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p>Ver los clientes</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="modalEliminacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Eliminar cliente</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<blockquote class="blockquote">
+						<p class="mb-0">Se eliminara el siguiente cliente registrado:</p>
+					</blockquote>
+					<dl class="row">
+						<dt class="col-sm-3">Nombre:</dt>
+						<dd class="col-sm-9">Otto</dd>
+
+						<dt class="col-sm-3">Direccion:</dt>
+						<dd class="col-sm-9">
+							<p>@mdo</p>
+						</dd>
+
+						<dt class="col-sm-3">Email:</dt>
+						<dd class="col-sm-9">16</dd>
+
+						<dt class="col-sm-3">Telefono:</dt>
+						<dd class="col-sm-9">8347845614</dd>
+					</dl>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+					<button type="button" class="btn btn-danger">Eliminar cliente</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="modalActualizacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Actualizar cliente</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form name="registro" action="" onsubmit="actualizarDatos();" method="get">
+						<blockquote class="blockquote">
+						<p class="mb-0">Actualiza los datos del cliente:</p>
+					</blockquote>
+									<div class="form-row">
+										<div class="form-group col-md-6">
+											<label for="inputEmail4">Nombres</label>
+											<input type="text" class="form-control" id="inputNombre" placeholder="Nombre">
+										</div>
+										<div class="form-group col-md-6">
+											<label for="inputApellidos">Apellidos</label>
+											<input type="text" class="form-control" id="inputApellidos" placeholder="Apellidos">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="inputDireccion">Direccion</label>
+										<input type="text" class="form-control" id="inputDireccion" placeholder="1234 Main Street">
+									</div>
+									<div class="form-row">
+										<div class="form-group col-md-8">
+											<label for="inputEmail">Email</label>
+											<input type="email" class="form-control" id="inputEmail" placeholder="ejemplo@correo.com">
+										</div>
+										<div class="form-group col-md-4">
+											<label for="inputTelefono">Telefono</label>
+											<input type="text" class="form-control" id="inputTelefono" placeholder="8347845614">
+										</div>
+									</div>
+									
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+					<button type="button" class="btn btn-primary">Actualizar cliente</button>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="js/jquery/jquery-3.2.1.slim.min.js"></script>
 	<script src="js/jquery/popper.min.js"></script>
 	<script src="js/jquery/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		function registrarCliente() {
+			// body...
+			$('#modalRegistro').modal('toggle');
+			$('#modalRegistro').modal('show');
+			
+		}
+		function eliminarCliente() {
+			// body...
+			$('#modalEliminacion').modal('toggle');
+			$('#modalEliminacion').modal('show');
+		}
+		function actualizarCliente() {
+			// body...
+			$('#modalActualizacion').modal('toggle');
+			$('#modalActualizacion').modal('show');
+		}
+	</script>
 </body>
 </html>

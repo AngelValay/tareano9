@@ -43,16 +43,72 @@
 					<div class="card-body">
 						<nav>
 							<div class="nav nav-tabs" id="nav-tab" role="tablist">
-								<a class="nav-item nav-link active" id="nav-registro-tab" data-toggle="tab" href="#nav-registro" role="tab" aria-controls="nav-registro" aria-selected="true">Registrar pedido</a>
-								<a class="nav-item nav-link" id="nav-mostrar-tab" data-toggle="tab" href="#nav-mostrar" role="tab" aria-controls="nav-mostrar" aria-selected="false">Mostrar pedidos</a>
+								<a class="nav-item nav-link active" id="nav-mostrar-tab" data-toggle="tab" href="#nav-mostrar" role="tab" aria-controls="nav-mostrar" aria-selected="true">Mostrar pedidos</a>
+								<a class="nav-item nav-link " id="nav-registro-tab" data-toggle="tab" href="#nav-registro" role="tab" aria-controls="nav-registro" aria-selected="false">Registrar pedido</a>
 							</div>
 						</nav>
 						<br>
 						<div class="tab-content" id="nav-tabContent">
-							<div class="tab-pane fade show active" id="nav-registro" role="tabpanel" aria-labelledby="nav-registro-tab">
+							<div class="tab-pane fade show active" id="nav-mostrar" role="tabpanel" aria-labelledby="nav-mostrar-tab">
+								<h4>Pedidos almacenados</h4>
+								<br>
+								<form class="form-inline">
+									<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+									<button class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar</button>
+								</form>
+								<br>
+								<table class="table table-hover table-bordered tabla-sm">
+									<thead class="thead-light">
+										<tr>
+											<th scope="col">#</th>
+											<th scope="col">Cliente</th>
+											<th scope="col">Producto</th>
+											<th scope="col">Cantidad</th>
+											<th scope="col">Fecha del pedido</th>
+											<th scope="col">Opciones</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th scope="row">1</th>
+											<td>Otto</td>
+											<td>@mdo</td>
+											<td>16</td>
+											<td>09/09/17</td>
+											<td>
+												<button type="button" class="btn btn-outline-secondary btn-sm" onclick="actualizarPedido();">Actualizar</button>
+												<button type="button" class="btn btn-outline-danger btn-sm" onclick="eliminarPedido();">Eliminar</button>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">2</th>
+											<td>Thornton</td>
+											<td>@fat</td>
+											<td>46</td>
+											<td>18/01/17</td>
+											<td>
+												<button type="button" class="btn btn-outline-secondary btn-sm" onclick="actualizarPedido();">Actualizar</button>
+												<button type="button" class="btn btn-outline-danger btn-sm" onclick="eliminarPedido();">Eliminar</button>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">3</th>
+											<td>Bird</td>
+											<td>@twitter</td>
+											<td>34</td>
+											<td>05/03/18</td>
+											<td>
+												<button type="button" class="btn btn-outline-secondary btn-sm" onclick="actualizarPedido();">Actualizar</button>
+												<button type="button" class="btn btn-outline-danger btn-sm" onclick="eliminarPedido();">Eliminar</button>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="tab-pane fade" id="nav-registro" role="tabpanel" aria-labelledby="nav-registro-tab">
 								<h4>Datos del pedido</h4>
 								<!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-								<form name="registro" action="" onsubmit="registrarPedido();" method="get">
+								<form name="registro" action="" method="get">
 									<div class="form-group row">
 										<label for="staticEmail" class="col-sm-3 col-form-label">Fecha de registro:</label>
 										<div class="col-sm-9">
@@ -82,65 +138,8 @@
 										</div>
 
 									</div>
-									<button type="submit" class="btn btn-primary">Generar pedido</button>
+									<button type="button" class="btn btn-primary" onclick="registrarPedido();">Generar pedido</button>
 								</form>
-							</div>
-							
-							<div class="tab-pane fade" id="nav-mostrar" role="tabpanel" aria-labelledby="nav-mostrar-tab">
-								<h4>Pedidos almacenados</h4>
-								<br>
-								<form class="form-inline">
-									<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-									<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-								</form>
-								<br>
-								<table class="table table-hover table-bordered tabla-sm">
-									<thead class="thead-light">
-										<tr>
-											<th scope="col">#</th>
-											<th scope="col">Cliente</th>
-											<th scope="col">Producto</th>
-											<th scope="col">Cantidad</th>
-											<th scope="col">Fecha del pedido</th>
-											<th scope="col">Opciones</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<th scope="row">1</th>
-											<td>Otto</td>
-											<td>@mdo</td>
-											<td>16</td>
-											<td>09/09/17</td>
-											<td>
-												<button type="button" class="btn btn-outline-secondary btn-sm">Actualizar</button>
-												<button type="button" class="btn btn-outline-danger btn-sm">Eliminar</button>
-											</td>
-										</tr>
-										<tr>
-											<th scope="row">2</th>
-											<td>Thornton</td>
-											<td>@fat</td>
-											<td>46</td>
-											<td>18/01/17</td>
-											<td>
-												<button type="button" class="btn btn-outline-secondary btn-sm">Actualizar</button>
-												<button type="button" class="btn btn-outline-danger btn-sm">Eliminar</button>
-											</td>
-										</tr>
-										<tr>
-											<th scope="row">3</th>
-											<td>Bird</td>
-											<td>@twitter</td>
-											<td>34</td>
-											<td>05/03/18</td>
-											<td>
-												<button type="button" class="btn btn-outline-secondary btn-sm">Actualizar</button>
-												<button type="button" class="btn btn-outline-danger btn-sm">Eliminar</button>
-											</td>
-										</tr>
-									</tbody>
-								</table>
 							</div>
 						</div>
 					</div>
@@ -148,8 +147,8 @@
 			</div>
 		</div>	
 	</main>
-	<div class="modal" tabindex="-1" role="dialog" id="myModal" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-sm" role="document">
+	<div class="modal fade" tabindex="-1" role="dialog" id="modalRegistro" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title">Pedido registrado</h5>
@@ -162,8 +161,97 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-					<button type="button" class="btn btn-primary">Mostrar pedidos</button>
 				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="modalEliminacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Eliminar pedido</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<blockquote class="blockquote">
+						<p class="mb-0">Se eliminara el siguiente pedido registrado:</p>
+					</blockquote>
+					<dl class="row">
+						<dt class="col-sm-3">Cliente:</dt>
+						<dd class="col-sm-9">Otto</dd>
+
+						<dt class="col-sm-3">Producto:</dt>
+						<dd class="col-sm-9">
+							<p>@mdo</p>
+						</dd>
+
+						<dt class="col-sm-3">Cantidad:</dt>
+						<dd class="col-sm-9">16</dd>
+
+						<dt class="col-sm-3">Fecha del pedido:</dt>
+						<dd class="col-sm-9">09/09/17</dd>
+					</dl>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+					<button type="button" class="btn btn-danger">Eliminar pedido</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="modalActualizacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Actualizar pedido</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form name="registro" action="" onsubmit="actualizarDatos();" method="get">
+						<blockquote class="blockquote">
+						<p class="mb-0">Actualiza los datos del pedido:</p>
+					</blockquote>
+									<div class="form-group row">
+										<label for="staticEmail" class="col-sm-3 col-form-label">Fecha de registro:</label>
+										<div class="col-sm-9">
+											<input type="text" readonly class="form-control-plaintext" id="staticEmail" value="31/05/2018 ">
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="staticCliente" class="col-sm-3 col-form-label">Cliente:</label>
+										<div class="col-sm-9">
+											<select class="form-control">
+												<option>Cliente no seleccionado</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="staticProducto" class="col-sm-3 col-form-label">Productos:</label>
+										<div class="col-sm-9">
+											<select class="form-control">
+												<option>Producto no seleccionado</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="formGroupCantidad" class="col-sm-3 col-form-label">Cantidad:</label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ingresa la cantidad">
+										</div>
+									</div>
+									
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+					<button type="button" class="btn btn-primary">Actualizar pedido</button>
+				</div>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -175,8 +263,19 @@
 	<script type="text/javascript">
 		function registrarPedido() {
 			// body...
-			$('#myModal').modal('toggle');
-			$('#myModal').modal('show');
+			$('#modalRegistro').modal('toggle');
+			$('#modalRegistro').modal('show');
+			
+		}
+		function eliminarPedido() {
+			// body...
+			$('#modalEliminacion').modal('toggle');
+			$('#modalEliminacion').modal('show');
+		}
+		function actualizarPedido() {
+			// body...
+			$('#modalActualizacion').modal('toggle');
+			$('#modalActualizacion').modal('show');
 		}
 	</script>
 </body>
